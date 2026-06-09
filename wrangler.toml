@@ -1,4 +1,6 @@
-name = "budgetwise-v2"
+name = "budgetwisev2"
 compatibility_date = "2024-04-05"
-pages_build_output_dir = "dist"
 compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./dist"
