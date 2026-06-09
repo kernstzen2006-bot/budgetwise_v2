@@ -1,0 +1,1 @@
+import{u as s,j as e,N as t}from"./index-D65NXWKi.js";function i(){const{user:r,loading:a}=s();return a?e.jsx("div",{className:"min-h-screen grid place-items-center bg-background",children:e.jsx("div",{className:"size-10 rounded-full border-2 border-primary border-t-transparent animate-spin"})}):e.jsx(t,{to:r?"/dashboard":"/auth",replace:!0})}export{i as component};

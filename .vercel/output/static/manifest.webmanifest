@@ -1,0 +1,13 @@
+{
+  "name": "BudgetWise SA",
+  "short_name": "BudgetWise",
+  "description": "Track smart. Save harder.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F1117",
+  "theme_color": "#0F1117",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/logo.jpg", "sizes": "512x512", "type": "image/jpeg", "purpose": "any maskable" }
+  ]
+}

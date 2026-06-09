@@ -1,0 +1,1 @@
+import{s as o,t as c}from"./index-D65NXWKi.js";async function p(r,s){try{const{data:a,error:t}=await o.rpc("award_xp",{p_amount:r,p_action:s});if(t)throw t;return c.success(`+${r} XP ✨`,{description:s,className:"xp-toast"}),a}catch(a){console.error("award_xp failed",a)}}export{p as a};
