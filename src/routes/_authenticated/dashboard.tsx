@@ -154,7 +154,7 @@ function Dashboard() {
 
       <div className="grid md:grid-cols-2 gap-4 mb-4">
         {/* Donut */}
-        <div className="card-surface p-5">
+        <div className="card-surface p-5 min-w-0">
           <div className="text-sm font-semibold mb-1">Monthly spending</div>
           <div className="text-xs text-muted-foreground mb-2">{money(expense)} of {money(budgetTotal)}</div>
           <div className="h-48 relative">
@@ -179,11 +179,11 @@ function Dashboard() {
         </div>
 
         {/* Weekly sparkline */}
-        <div className="card-surface p-5">
+        <div className="card-surface p-5 min-w-0">
           <div className="text-sm font-semibold">Weekly spend</div>
           <div className="text-xs text-muted-foreground mb-2">Last 7 days</div>
           <div className="overflow-x-auto scroll-hide -mx-5 px-5">
-            <div className="min-w-[500px] h-48">
+            <div className="min-w-full h-48">
               <ResponsiveContainer>
                 <LineChart data={weekData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                   <XAxis dataKey="day" tick={{ fill: "#8A8D9A", fontSize: 11 }} axisLine={false} tickLine={false} />
