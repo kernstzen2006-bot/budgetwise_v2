@@ -1,0 +1,160 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--card);
+  --color-popover-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-foreground);
+  --color-sidebar-accent: var(--card);
+  --color-sidebar-accent-foreground: var(--foreground);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--ring);
+
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+  --radius: 12px;
+
+  --background: #0F1117;
+  --foreground: #F5F5F0;
+
+  --card: #1A1D27;
+  --card-foreground: #F5F5F0;
+
+  --primary: #00E676;
+  --primary-foreground: #0B0F0C;
+
+  --secondary: #00BFA5;
+  --secondary-foreground: #0B0F0C;
+
+  --muted: #1A1D27;
+  --muted-foreground: #8A8D9A;
+
+  --accent: #00BFA5;
+  --accent-foreground: #0B0F0C;
+
+  --destructive: #FF4444;
+  --destructive-foreground: #ffffff;
+
+  --warning: #FFB300;
+
+  --border: #3A3D4A;
+  --input: #2A2D38;
+  --ring: #00E676;
+
+  --sidebar: #14161E;
+  --sidebar-foreground: #F5F5F0;
+
+  --chart-1: #00E676;
+  --chart-2: #00BFA5;
+  --chart-3: #FFB300;
+  --chart-4: #FF4444;
+  --chart-5: #8A8D9A;
+
+  --shadow-glow: 0 0 32px -8px rgba(0, 230, 118, 0.45);
+  --gradient-green: linear-gradient(135deg, #00E676, #00BFA5);
+}
+
+.dark { color-scheme: dark; }
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body, #root { height: 100%; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, .font-display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  input, button, select, textarea { font-family: inherit; font-size: 16px; }
+  /* Hide number input arrows */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type="number"] { -moz-appearance: textfield; }
+}
+
+@utility glow-green {
+  box-shadow: 0 0 24px -6px rgba(0, 230, 118, 0.55);
+}
+@utility text-glow-green {
+  text-shadow: 0 0 18px rgba(0, 230, 118, 0.55);
+}
+@utility card-surface {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+@utility scroll-hide {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+@keyframes xp-rise {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-80px); opacity: 0; }
+}
+@utility animate-xp-rise { animation: xp-rise 1.8s ease-out forwards; }
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@utility animate-count-up { animation: count-up 0.6s ease-out; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.6); }
+  50% { box-shadow: 0 0 32px 4px rgba(0, 230, 118, 0.35); }
+}
+@utility animate-pulse-glow { animation: pulse-glow 2.4s ease-in-out infinite; }
+
+@media (max-width: 767px) {
+  main .card-surface:not(.max-w-sm):not(.max-w-md) {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
